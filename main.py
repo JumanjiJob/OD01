@@ -1,0 +1,26 @@
+#Напишите проверку на то, является ли строка палиндромом
+
+# Вводим исходные данные
+word = input('Введите слово или фразу для проверки без знаков препинания: ')
+word1 = word.replace(' ', '').lower()
+
+# Изменение порядка элементов на обратный
+reversed_list = word1[::-1]
+
+#Проверяем и выводим результат
+if word1 == reversed_list:
+  print('Выбранное слово или фраза палиндром')
+else:
+  print('Выбранное слово или фраза палиндромом не является')
+
+
+  def is_palindrome(s):
+    s = s.replace(" ", "").lower()
+
+    left, right = 0, len(s) - 1
+    while left < right:
+      if s[left] != s[right]:
+        return False
+      left += 1
+      right -= 1
+    return True
